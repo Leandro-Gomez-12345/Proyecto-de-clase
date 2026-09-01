@@ -18,7 +18,6 @@ public class UtilNumero {
 		return obtenerValorDefecto(numeroUno).doubleValue() > obtenerValorDefecto(numeroDos).doubleValue();
 	}
 	
-	
 	public static <N extends Number> boolean menorQue(N numeroUno, N numeroDos) {
 		return obtenerValorDefecto(numeroUno).doubleValue() < obtenerValorDefecto(numeroDos).doubleValue();
 	}
@@ -31,6 +30,33 @@ public class UtilNumero {
 		return obtenerValorDefecto(numeroUno).doubleValue() <= obtenerValorDefecto(numeroDos).doubleValue();
 	}
 	
-	// intentado hacer el de intervalo de numeros
-	//public static 
+	public static <N extends Number> boolean estaEnIntervalo(N valor, N limiteInferior, N limiteSuperior,
+	        boolean incluirLimiteInferior, boolean incluirLimiteSuperior) {
+
+	    var cumpleLimiteInferior = incluirLimiteInferior
+	            ? mayorIgualQue(valor, limiteInferior)
+	            : mayorQue(valor, limiteInferior);
+
+	    var cumpleLimiteSuperior = incluirLimiteSuperior
+	            ? menorIgualQue(valor, limiteSuperior)
+	            : menorQue(valor, limiteSuperior);
+
+	    return cumpleLimiteInferior && cumpleLimiteSuperior;
+	}
+
+	public static <N extends Number> boolean estaEnIntervaloCerrado(N valor, N limiteInferior, N limiteSuperior) {
+	    return estaEnIntervalo(valor, limiteInferior, limiteSuperior, true, true);
+	}
+
+	public static <N extends Number> boolean estaEnIntervaloAbierto(N valor, N limiteInferior, N limiteSuperior) {
+	    return estaEnIntervalo(valor, limiteInferior, limiteSuperior, false, false);
+	}
+
+	public static <N extends Number> boolean estaEnIntervaloCerradoPorIzquierda(N valor, N limiteInferior, N limiteSuperior) {
+	    return estaEnIntervalo(valor, limiteInferior, limiteSuperior, true, false);
+	}
+
+	public static <N extends Number> boolean estaEnIntervaloCerradoPorDerecha(N valor, N limiteInferior, N limiteSuperior) {
+	    return estaEnIntervalo(valor, limiteInferior, limiteSuperior, false, true);
+	}
 }
