@@ -22,19 +22,25 @@ public class DepartamentoEntidad {
 	public PaisDTO getPaisdto() {
 		return paisdto;
 	}
+	
 	public void setPaisdto(PaisDTO paisdto) {
 		this.paisdto = paisdto;
 	}
+	
 	public UUID getId() {
 		return id;
 	}
+	
 	public void setId(UUID id) {
 		this.id = id;
 	}
+	
 	public String getNombre() {
 		return nombre;
 	}
+	
 	public void setNombre(String nombre) {
 		this.nombre = UtilTexto.getUtilTexto().quitarEspaciosEnBlanco(nombre);
 	}
+	
 }

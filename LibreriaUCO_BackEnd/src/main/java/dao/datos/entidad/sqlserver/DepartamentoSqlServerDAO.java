@@ -6,7 +6,7 @@ import java.util.UUID;
 import co.edu.uco.libreriauco.entidad.DepartamentoEntidad;
 import dao.datos.entidad.DepartamentoDAO;
 
-public class DepartamentoSqlServerDAO implements DepartamentoDAO{
+public class DepartamentoSqlServerDAO extends SqlDAO implements DepartamentoDAO {
 
 	@Override
 	public DepartamentoEntidad consultarPorId(UUID id) {
