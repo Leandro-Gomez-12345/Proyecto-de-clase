@@ -1,12 +1,12 @@
-package dao.datos.entidad.sqlserver;
+package co.edu.uco.libreriauco.dao.datos.entidad.postgresql;
 
 import java.util.List;
 import java.util.UUID;
 
+import co.edu.uco.libreriauco.dao.datos.entidad.PaisDAO;
 import co.edu.uco.libreriauco.entidad.PaisEntidad;
-import dao.datos.entidad.PaisDAO;
 
-public class PaisSqlServerDAO implements PaisDAO{
+public class PaisPostgreSqlDAO implements PaisDAO{
 
 	@Override
 	public void crear(PaisEntidad entidad) {
@@ -44,5 +44,4 @@ public class PaisSqlServerDAO implements PaisDAO{
 		
 	}
 
-	
 }

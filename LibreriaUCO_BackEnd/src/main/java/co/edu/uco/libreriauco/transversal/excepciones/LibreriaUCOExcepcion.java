@@ -4,7 +4,7 @@ import co.edu.uco.libreriauco.transversal.excepciones.enums.Capa;
 import co.edu.uco.libreriauco.transversal.utilitarios.UtilObjeto;
 import co.edu.uco.libreriauco.transversal.utilitarios.UtilTexto;
 
-public class LibreriaUCOExcepcion extends RuntimeException{
+public class LibreriaUCOExcepcion extends RuntimeException {
 
 	private static final long serialVersionUID = 3055991330257068511L;
 	private Capa capa;
@@ -52,7 +52,7 @@ public class LibreriaUCOExcepcion extends RuntimeException{
 	}
 
 	private void setMensajeTecnico(String mensajeTecnico) {
-		this.mensajeTecnico = UtilTexto.getUtilTexto().obtenerValorDefecto(mensajeTecnico, getMensajeTecnico());
+		this.mensajeTecnico = UtilTexto.getUtilTexto().obtenerValorDefecto(mensajeTecnico, getMensajeUsuario());
 	}
 
 	private void setExcepcionRaiz(Exception excepcionRaiz) {

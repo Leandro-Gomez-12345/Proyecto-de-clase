@@ -1,14 +1,14 @@
 package co.edu.uco.libreriauco.transversal.excepciones;
 
 import co.edu.uco.libreriauco.transversal.excepciones.enums.Capa;
-import co.edu.uco.libreriauco.transversal.utilitarios.UtilObjeto;
-import co.edu.uco.libreriauco.transversal.utilitarios.UtilTexto;
 
 public class LibreriaUCONegocioExcepcion extends LibreriaUCOExcepcion {
 
-	protected LibreriaUCONegocioExcepcion(Capa capa, String mensajeUsuario, String mensajeTecnico,
+	private static final long serialVersionUID = -8286544944606272166L;
+
+	private LibreriaUCONegocioExcepcion(String mensajeUsuario, String mensajeTecnico,
 			Exception excepcionRaiz) {
-		super(capa.NEGOCIO, mensajeUsuario, mensajeTecnico, excepcionRaiz);
+		super(Capa.NEGOCIO, mensajeUsuario, mensajeTecnico, excepcionRaiz);
 	}
 
 
