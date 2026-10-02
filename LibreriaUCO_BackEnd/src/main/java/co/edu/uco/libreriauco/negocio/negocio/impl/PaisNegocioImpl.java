@@ -9,6 +9,8 @@ import co.edu.uco.libreriauco.entidad.PaisEntidad;
 import co.edu.uco.libreriauco.negocio.negocio.PaisNegocio;
 import co.edu.uco.libreriauco.negocio.negocio.assembler.impl.PaisEntidadAssembler;
 import co.edu.uco.libreriauco.transversal.catalogo.CatalogoMensajes;
+import co.edu.uco.libreriauco.transversal.excepciones.LibreriaUCONegocioExcepcion;
+import co.edu.uco.libreriauco.transversal.excepciones.LibreriaUCOTransversalExcepcion;
 
 public class PaisNegocioImpl implements PaisNegocio {
 	
@@ -41,7 +43,8 @@ public class PaisNegocioImpl implements PaisNegocio {
 		var resultados = daoFactory.obtenerPaisDAO().consultarPorFiltro(entidadFiltro);
 		
 		if(!resultados.isEmpty()) {
-			var mensajeUsuario = CatalogoMensajes.PaisNegocioImpl.PAIS_YA_EXISTE_CON_EL_MISMO_NOMBRE_DE_PAIS_A_CREAR;
+			var mensajeUsuario = CatalogoMensajes.PaisNegocioImpl.PAIS_EXISTE_CON_EL_MISMO_NOMBRE_DE_PAIS_A_CREAR;
+			throw LibreriaUCONegocioExcepcion.crear(mensajeUsuario);
 		}
 	}
 	

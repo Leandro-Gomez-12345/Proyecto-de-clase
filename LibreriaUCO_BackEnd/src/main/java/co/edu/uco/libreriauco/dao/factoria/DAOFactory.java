@@ -19,29 +19,25 @@ public abstract class DAOFactory {
 	}
 
 	protected void setConexion(Connection conexion) {
-		// Tarea: asegurar que la conexion este abierta y sea valida
+		UtilSQL.asegurarConexionValida(conexion);
 		this.conexion = conexion;
 	}
 	
 	protected abstract void abrirConexion();
 	
 	public void cerrarConexion() {
-		// Tarea: Como se cierra la conexion de forma segura
 		UtilSQL.cerrarConexion(conexion);
 	}
 	
 	public void iniciarTransacion() {
-		// Tarea: Como se inicia una transaccion de forma segura
 		UtilSQL.iniciarTransaccion(conexion);
 	}
 	
 	public void confirmarTransacion() {
-		// Tarea: Como se confirma una transaccion de forma segura
 		UtilSQL.confirmarTransaccion(conexion);
 	}
 	
 	public void cancelarTransacion() {
-		// Tarea: Como se cancela una transaccion de forma segura
 		UtilSQL.cancelarTransaccion(conexion);
 	}
 	
