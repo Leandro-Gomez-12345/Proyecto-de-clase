@@ -8,6 +8,7 @@ import co.edu.uco.libreriauco.dominio.PaisDominio;
 import co.edu.uco.libreriauco.entidad.PaisEntidad;
 import co.edu.uco.libreriauco.negocio.negocio.PaisNegocio;
 import co.edu.uco.libreriauco.negocio.negocio.assembler.impl.PaisEntidadAssembler;
+import co.edu.uco.libreriauco.negocio.negocio.reglas.impl.pais.AsegurarNombreNuevoPaisNoExistaRule;
 import co.edu.uco.libreriauco.transversal.catalogo.CatalogoMensajes;
 import co.edu.uco.libreriauco.transversal.excepciones.LibreriaUCONegocioExcepcion;
 import co.edu.uco.libreriauco.transversal.excepciones.LibreriaUCOTransversalExcepcion;
@@ -23,29 +24,17 @@ public class PaisNegocioImpl implements PaisNegocio {
 	@Override
 	public void registrarInformacionNuevoPais(PaisDominio datos) {
 		asegurarDatosRegistroNuevoPaisValidos(datos);
-		asegurarNombreNuevoPaisNoExista(datos.getNombre());
 		
+		AsegurarNombreNuevoPaisNoExistaRule.obtenerInstancia().ejecutar(datos.getNombre(), daoFactory);		
 		var paisEntidad = PaisEntidadAssembler.getInstance().convertirAEntidad(datos);
 		paisEntidad.setId(generarIdPaisUnico());
 		
 		daoFactory.obtenerPaisDAO().crear(paisEntidad);
 	}
 	
-	// LO anterior son metodos de apoyo
+	// Lo anterior son metodos de apoyo
 	private void asegurarDatosRegistroNuevoPaisValidos(PaisDominio datos) {
 		
-	}
-	
-	private void asegurarNombreNuevoPaisNoExista(String nombrePais) {
-		var entidadFiltro = new PaisEntidad();
-		entidadFiltro.setNombre(nombrePais);
-		
-		var resultados = daoFactory.obtenerPaisDAO().consultarPorFiltro(entidadFiltro);
-		
-		if(!resultados.isEmpty()) {
-			var mensajeUsuario = CatalogoMensajes.PaisNegocioImpl.PAIS_EXISTE_CON_EL_MISMO_NOMBRE_DE_PAIS_A_CREAR;
-			throw LibreriaUCONegocioExcepcion.crear(mensajeUsuario);
-		}
 	}
 	
 	private UUID generarIdPaisUnico() {

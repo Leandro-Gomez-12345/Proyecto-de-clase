@@ -41,10 +41,15 @@ public class CatalogoMensajes {
 	}
 	
 	public static class PaisNegocioImpl {
+
 		private PaisNegocioImpl() {
 			
 		}
 		
+		
 		public static final String PAIS_EXISTE_CON_EL_MISMO_NOMBRE_DE_PAIS_A_CREAR = "Ya existe otro pais con el nombre con el cual se desea crear el pais deseado";
+		public static final String NOMBRE_PAIS_OBLIGATORIO = "";
+		public static final String LONGITUD_NOMBRE_PAIS_NO_VALIDA = "La longitud del nombre";
+		public static final String FORMATO_PAIS_NO_VALIDO = "";
 	}
 }
