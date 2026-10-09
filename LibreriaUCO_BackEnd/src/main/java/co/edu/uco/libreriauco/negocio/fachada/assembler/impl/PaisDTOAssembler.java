@@ -3,17 +3,18 @@ package co.edu.uco.libreriauco.negocio.fachada.assembler.impl;
 import java.util.List;
 
 import co.edu.uco.libreriauco.dominio.PaisDominio;
+import co.edu.uco.libreriauco.dto.PaisDTO;
 import co.edu.uco.libreriauco.negocio.fachada.assembler.DTOAssembler;
 
-public class PaisDTOAsembler implements DTOAssembler<PaisDominio, PaisDTO>{
+public class PaisDTOAssembler implements DTOAssembler<PaisDominio, PaisDTO>{
 	
 	private static final DTOAssembler<PaisDominio, PaisDTO> instancia = new PaisDTOAssembler();
 	
-	private PaisDTOAsembler() {
+	private PaisDTOAssembler() {
 		
 	}
 	
-	public static PaisDTOAsembler getInstance() {
+	public static DTOAssembler<PaisDominio, PaisDTO> getInstance() {
 		return instancia;
 	}
 

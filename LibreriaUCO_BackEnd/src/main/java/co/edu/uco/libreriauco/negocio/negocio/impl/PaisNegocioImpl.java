@@ -5,13 +5,9 @@ import java.util.UUID;
 
 import co.edu.uco.libreriauco.dao.factoria.DAOFactory;
 import co.edu.uco.libreriauco.dominio.PaisDominio;
-import co.edu.uco.libreriauco.entidad.PaisEntidad;
-import co.edu.uco.libreriauco.negocio.fachada.assembler.impl.PaisEntidadAssembler;
 import co.edu.uco.libreriauco.negocio.negocio.PaisNegocio;
+import co.edu.uco.libreriauco.negocio.negocio.assembler.impl.PaisEntidadAssembler;
 import co.edu.uco.libreriauco.negocio.negocio.reglas.impl.pais.AsegurarNombreNuevoPaisNoExistaRule;
-import co.edu.uco.libreriauco.transversal.catalogo.CatalogoMensajes;
-import co.edu.uco.libreriauco.transversal.excepciones.LibreriaUCONegocioExcepcion;
-import co.edu.uco.libreriauco.transversal.excepciones.LibreriaUCOTransversalExcepcion;
 
 public class PaisNegocioImpl implements PaisNegocio {
 	

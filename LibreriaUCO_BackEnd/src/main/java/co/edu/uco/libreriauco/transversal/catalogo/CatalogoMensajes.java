@@ -46,10 +46,21 @@ public class CatalogoMensajes {
 			
 		}
 		
-		
 		public static final String PAIS_EXISTE_CON_EL_MISMO_NOMBRE_DE_PAIS_A_CREAR = "Ya existe otro pais con el nombre con el cual se desea crear el pais deseado";
 		public static final String NOMBRE_PAIS_OBLIGATORIO = "El nombre del pais es obligatorio para llevar a cabo la operacion deseada.";
 		public static final String LONGITUD_NOMBRE_PAIS_NO_VALIDA = "La longitud del nombre no es valida. Asegurese que este entre 1 y 50";
 		public static final String FORMATO_PAIS_NO_VALIDO = "El formato del nombre no es valido asegurese que solo tenga letras de la A a la Z, mayusculas o minusculas y espacios";
+	}
+	
+	public static class PaisFachadaImpl {
+		
+		
+		private PaisFachadaImpl() {
+			
+		}
+		
+		public static final String USUARIO_ERROR_REGISTRANDO_PAIS_NUEVO = "Se ha presentado un problema inesperado tratando de registrar la informacion del nuevo pais deseado. Por favor intente de nuevo y si el problema persiste contacte al administrador de la aplicacion";
+		public static final String USUARIO_ERROR_MODIFICANDO_INFORMACION_PAIS_EXISTENTE = "Se ha presentado un problema inesperado tratando de modificar la informacion del nuevo pais deseado. Por favor intente de nuevo y si el problema persiste contacte al administrador de la aplicacion";
+		public static final String USUARIO_ERROR_CONSULTANDO_PAISES = "Se ha presentado un problema inesperado tratando de consultar la informacion de todos los paises. Por favor intente de nuevo y si el problema persiste contacte al administrador de la aplicacion";
 	}
 }
