@@ -8,7 +8,7 @@ public class ValidarDatosRegistrarInformacionNuevoPaisRule implements Rule<PaisD
 	@Override
 	public void ejecutar(PaisDominio... datos) {
 		var dominio = datos[0];
-		AsegurarNombreNuevoPaisNoExistaRule.obtenerInstancia().ejecutar(dominio.getNombre());		
+		AsegurarNombrePaisValidoRule.obtenerInstancia().ejecutar(dominio.getNombre());		
 	}
 
 }
