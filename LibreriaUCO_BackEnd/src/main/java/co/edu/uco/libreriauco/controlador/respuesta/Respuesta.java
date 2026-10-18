@@ -5,10 +5,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import co.edu.uco.libreriauco.transversal.utilitarios.UtilObjeto;
+import co.edu.uco.libreriauco.transversal.utilitarios.UtilUUID;
 
 class Respuesta<D> {
 	
-	private LocalDateTime timestamp = LocalDateTime.now();
+	private LocalDateTime timestamp;
 	private String correlationId;
 	private List<String> mensajes;
 	private List<D> datos;
@@ -17,7 +18,9 @@ class Respuesta<D> {
 	protected Respuesta(List<String> mensajes, List<D> datos, EstadoRespuesta estado) {
 		setMensajes(mensajes);
 		setDatos(datos);
-		setMensajes(mensajes);
+		setEstado(estado);
+		timestamp = LocalDateTime.now();
+		correlationId = UtilUUID.generarComoTexto();
 	}
 
 	private void setMensajes(List<String> mensajes) {
