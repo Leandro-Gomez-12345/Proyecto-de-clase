@@ -66,7 +66,7 @@ public class PaisFachadaImpl implements PaisFachada {
 	}
 
 	@Override
-	public void darBajaInformacionPaisExistente(UUID id, PaisDTO datos) {
+	public void darBajaInformacionPaisExistente(UUID id) {
 		// TODO Auto-generated method stub
 		
 	}

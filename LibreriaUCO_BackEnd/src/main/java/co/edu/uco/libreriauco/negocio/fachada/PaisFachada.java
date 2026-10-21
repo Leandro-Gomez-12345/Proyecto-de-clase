@@ -11,7 +11,7 @@ void registrarInformacionNuevoPais(PaisDTO datos);
 	
 	void modificarInformacionPaisExistente(UUID id, PaisDTO datos);
 	
-	void darBajaInformacionPaisExistente(UUID id, PaisDTO datos);
+	void darBajaInformacionPaisExistente(UUID id);
 	
 	List<PaisDTO> consultarPorFiltro(PaisDTO filtro);
 	
