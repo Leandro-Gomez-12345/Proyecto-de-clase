@@ -7,7 +7,7 @@ import co.edu.uco.libreriauco.dominio.PaisDominio;
 
 public interface PaisNegocio {
 	
-	// Aca se colocan los metodos en el diagrama de clases
+	// Aca se colocan los metodos de el diagrama de clases
 	void registrarInformacionNuevoPais(PaisDominio datos);
 	
 	void modificarInformacionPaisExistente(UUID id, PaisDominio datos);

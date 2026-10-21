@@ -57,7 +57,7 @@ public class PaisControlador extends AbstractRestController {
 		return ResponseEntity.ok(respuesta);
 	}
 	
-	@PutMapping("/{id)")
+	@PutMapping("/{id}")
 	public ResponseEntity<RespuestaOk<String>> modificarInformacionPaisExistente(@PathVariable UUID id, @RequestBody PaisDTO datos) {
 		fachada.modificarInformacionPaisExistente(id, datos);
 		RespuestaOk<String> respuesta = RespuestaOk.crear("Se ha modificado la informacion del pais deseado de forma exitosa.");

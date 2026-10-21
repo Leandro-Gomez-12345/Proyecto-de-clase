@@ -5,6 +5,7 @@ import java.sql.Connection;
 import co.edu.uco.libreriauco.dao.datos.entidad.DepartamentoDAO;
 import co.edu.uco.libreriauco.dao.datos.entidad.PaisDAO;
 import co.edu.uco.libreriauco.dao.factoria.enums.FactoriaEnum;
+import co.edu.uco.libreriauco.dao.factoria.impl.MySqlDAOFactory;
 import co.edu.uco.libreriauco.dao.factoria.impl.SqlServerDAOFactory;
 import co.edu.uco.libreriauco.transversal.excepciones.LibreriaUCODatosException;
 import co.edu.uco.libreriauco.transversal.utilitarios.UtilSQL;
@@ -12,12 +13,12 @@ import co.edu.uco.libreriauco.transversal.utilitarios.UtilSQL;
 public abstract class DAOFactory {
 	
 	private Connection conexion;
-	private static FactoriaEnum factoria = FactoriaEnum.SQLSERVER;
+	private static FactoriaEnum factoria = FactoriaEnum.MYSQL;
 	
 	public static DAOFactory obtenerFactoria() {
 		switch (factoria) {
-		case SQLSERVER:
-			return new SqlServerDAOFactory();
+		case MYSQL:
+			return new MySqlDAOFactory();
 		default:
 			var mensajeUsuario = "La fuente de informacion deseada que se solicito para llevar a cabo la operacion no esta habilitada. Por favor contacte con el administrador de la aplicacion";
 			throw LibreriaUCODatosException.crear(mensajeUsuario);

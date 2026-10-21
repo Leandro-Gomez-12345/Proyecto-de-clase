@@ -6,7 +6,6 @@ import java.util.UUID;
 
 import co.edu.uco.libreriauco.dao.datos.entidad.SqlDAO;
 import co.edu.uco.libreriauco.dao.datos.entidad.DepartamentoDAO;
-import co.edu.uco.libreriauco.entidad.DepartamentoEntidad;
 
 public class DepartamentoMySqlDAO extends SqlDAO implements DepartamentoDAO {
 
