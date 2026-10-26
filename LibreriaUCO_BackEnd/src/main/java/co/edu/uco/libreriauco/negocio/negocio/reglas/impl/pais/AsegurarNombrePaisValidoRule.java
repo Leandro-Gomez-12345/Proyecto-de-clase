@@ -46,7 +46,7 @@ public class AsegurarNombrePaisValidoRule implements Rule<String> {
 	
 	private void validarLongitud(String dato, int longitudMinima, int longitudMaxima) {
 		
-		if (!UtilTexto.getUtilTexto().longitudCadenaEsValida(dato, longitudMinima, longitudMaxima, true)); {
+		if (!UtilTexto.getUtilTexto().longitudCadenaEsValida(dato, longitudMinima, longitudMaxima, true)) {
 			var mensajeUsuario = CatalogoMensajes.PaisNegocioImpl.LONGITUD_NOMBRE_PAIS_NO_VALIDA;
 			throw LibreriaUCONegocioExcepcion.crear(mensajeUsuario);
 		}
