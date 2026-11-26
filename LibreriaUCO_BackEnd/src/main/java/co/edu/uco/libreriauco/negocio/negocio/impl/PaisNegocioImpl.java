@@ -28,7 +28,6 @@ public class PaisNegocioImpl implements PaisNegocio {
 		daoFactory.obtenerPaisDAO().crear(paisEntidad);
 	}
 	
-	// Lo anterior son metodos de apoyo
 	private void asegurarDatosRegistroNuevoPaisValidos(PaisDominio datos) {
 		
 	}

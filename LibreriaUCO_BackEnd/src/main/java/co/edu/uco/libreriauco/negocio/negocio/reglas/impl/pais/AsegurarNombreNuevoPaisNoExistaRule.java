@@ -14,7 +14,6 @@ public class AsegurarNombreNuevoPaisNoExistaRule implements Rule<Object> {
 		
 	}
 	
-	// interface segregation
 	public static final Rule<Object> obtenerInstancia() {
 		return instancia;
 	}

@@ -34,10 +34,16 @@ public class CatalogoMensajes {
 		}
 
 		public static final String USUARIO_ERROR_ABRIENDO_CONEXION = "No fue posible conectarse con la fuente de informacion. Por favor intente de nuevo y si el problema persiste contacte al administrador de la aplicacion...";
+		
 		public static final String USUARIO_ERROR_CREANDO_PAIS = "Se presento un problema tratando de registrar la informacion del pais. Por favor intente de nuevo y si el problema persiste contacte al administrador de la aplicacion...";
 		public static final String USUARIO_ERROR_CONSULTANDO_PAIS = "Se presento un problema tratando de consultar la informacion de los paises. Por favor intente de nuevo y si el problema persiste contacte al administrador de la aplicacion...";
 		public static final String USUARIO_ERROR_ACTUALIZANDO_PAIS = "Se presento un problema tratando de actualizar la informacion del pais. Por favor intente de nuevo y si el problema persiste contacte al administrador de la aplicacion...";
 		public static final String USUARIO_ERROR_ELIMINANDO_PAIS = "Se presento un problema tratando de eliminar la informacion del pais. Por favor intente de nuevo y si el problema persiste contacte al administrador de la aplicacion...";
+		
+		public static final String USUARIO_ERROR_CREANDO_DEPARTAMENTO = "Se presento un problema tratando de registrar la informacion del departamento. Por favor intente de nuevo y si el problema persiste contacte al administrador de la aplicacion...";
+		public static final String USUARIO_ERROR_CONSULTANDO_DEPARTAMENTO = "Se presento un problema tratando de consultar la informacion de los departamento. Por favor intente de nuevo y si el problema persiste contacte al administrador de la aplicacion...";
+		public static final String USUARIO_ERROR_ACTUALIZANDO_DEPARTAMENTO = "Se presento un problema tratando de actualizar la informacion del departamento. Por favor intente de nuevo y si el problema persiste contacte al administrador de la aplicacion...";
+		public static final String USUARIO_ERROR_ELIMINANDO_DEPARTAMENTO = "Se presento un problema tratando de eliminar la informacion del departamento. Por favor intente de nuevo y si el problema persiste contacte al administrador de la aplicacion...";
 	}
 	
 	public static class PaisNegocioImpl {
@@ -62,5 +68,32 @@ public class CatalogoMensajes {
 		public static final String USUARIO_ERROR_REGISTRANDO_PAIS_NUEVO = "Se ha presentado un problema inesperado tratando de registrar la informacion del nuevo pais deseado. Por favor intente de nuevo y si el problema persiste contacte al administrador de la aplicacion";
 		public static final String USUARIO_ERROR_MODIFICANDO_INFORMACION_PAIS_EXISTENTE = "Se ha presentado un problema inesperado tratando de modificar la informacion del nuevo pais deseado. Por favor intente de nuevo y si el problema persiste contacte al administrador de la aplicacion";
 		public static final String USUARIO_ERROR_CONSULTANDO_PAISES = "Se ha presentado un problema inesperado tratando de consultar la informacion de todos los paises. Por favor intente de nuevo y si el problema persiste contacte al administrador de la aplicacion";
+	}
+	
+	public static class DepartamentoNegocioImpl {
+
+		private DepartamentoNegocioImpl() {
+			
+		}
+		
+		public static final String DEPARTAMENTO_EXISTE_CON_EL_MISMO_NOMBRE = "Ya existe otro departemento con el nombre con el cual se desea crear el departamento deseado";
+		public static final String LONGITUD_NOMBRE_DEPARTAMENTO_NO_VALIDA = "La longitud del nombre no es valida. Asegurese que este entre 3 y 50";
+		public static final String FORMATO_DEPARTAMENTO_NO_VALIDO = "El formato del nombre no es valido asegurese que solo tenga letras de la A a la Z, mayusculas o minusculas y espacios";
+		public static final String PAIS_OBLIGATORIO_NO_VALIDO = "El pais no fue seleccionado, asegurese de seleccionar un pais.";
+		
+		public static final String DEPARTAMENTO_NO_EXISTE = "El departamento al que referencia no existe";
+	}
+	
+	public static class DepartamentoFachadaImpl {
+		
+		
+		private DepartamentoFachadaImpl() {
+			
+		}
+		
+		public static final String USUARIO_ERROR_REGISTRANDO_DEPARTAMENTO_NUEVO = "Se ha presentado un problema inesperado tratando de registrar la informacion del nuevo departamento deseado. Por favor intente de nuevo y si el problema persiste contacte al administrador de la aplicacion";
+		public static final String USUARIO_ERROR_MODIFICANDO_INFORMACION_DEPARTAMENTO_EXISTENTE = "Se ha presentado un problema inesperado tratando de modificar la informacion del nuevo departamento deseado. Por favor intente de nuevo y si el problema persiste contacte al administrador de la aplicacion";
+		public static final String USUARIO_ERROR_CONSULTANDO_DEPARTAMENTOS = "Se ha presentado un problema inesperado tratando de consultar la informacion de todos los departamento. Por favor intente de nuevo y si el problema persiste contacte al administrador de la aplicacion";
+		public static final String USUARIO_ERROR_ELIMINANDO_DEPARTAMENTO_EXISTE = "Se ha presentado un problema inesperado tratando de eliminar el departamento. Por favor intente de nuevo y si el problema persiste contacte al administrador de la aplicacion";
 	}
 }

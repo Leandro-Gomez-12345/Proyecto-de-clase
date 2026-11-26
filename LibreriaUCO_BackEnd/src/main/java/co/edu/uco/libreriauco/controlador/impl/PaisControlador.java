@@ -3,8 +3,6 @@ package co.edu.uco.libreriauco.controlador.impl;
 import java.util.UUID;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.oauth2.core.oidc.user.OidcUser;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,12 +23,6 @@ import co.edu.uco.libreriauco.negocio.fachada.impl.PaisFachadaImpl;
 public class PaisControlador extends AbstractRestController {
 	
 	private PaisFachada fachada = new PaisFachadaImpl();
-	@GetMapping("/login")
-	public String hacerLogin(@AuthenticationPrincipal OidcUser datosUsuario) {
-		return "Hola Usuario %s. Te has autenticado con el correo %s. Su token es %s"
-				.formatted(datosUsuario.getFullName(), datosUsuario.getEmail(), 
-						datosUsuario.getIdToken().getTokenValue());
-	}
 	
 	@GetMapping("/dummy")
 	public PaisDTO consultarDummy() {
@@ -60,7 +52,7 @@ public class PaisControlador extends AbstractRestController {
 	
 	@PostMapping
 	public ResponseEntity<RespuestaOk<String>> regitrarInformacionNuevoPais(@RequestBody PaisDTO pais) {
-		fachada.registrarInformacionNuevoPais(pais);
+		new PaisFachadaImpl().registrarInformacionNuevoPais(pais);
 		RespuestaOk<String> respuesta = RespuestaOk.crear("Se ha registrado la informacion del nuevo pais de forma exitosa.");
 		return ResponseEntity.ok(respuesta);
 	}

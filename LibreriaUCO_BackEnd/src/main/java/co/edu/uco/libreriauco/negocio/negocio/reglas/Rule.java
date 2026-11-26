@@ -2,7 +2,7 @@ package co.edu.uco.libreriauco.negocio.negocio.reglas;
 
 public interface Rule<O> {
 	
-	// tres puntos son argumentos variables
+	@SuppressWarnings("unchecked")
 	void ejecutar(O... datos);
 	
 }

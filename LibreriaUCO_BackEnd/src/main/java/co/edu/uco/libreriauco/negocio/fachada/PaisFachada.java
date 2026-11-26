@@ -7,7 +7,7 @@ import co.edu.uco.libreriauco.dto.PaisDTO;
 
 public interface PaisFachada {
 	
-void registrarInformacionNuevoPais(PaisDTO datos);
+	void registrarInformacionNuevoPais(PaisDTO datos);
 	
 	void modificarInformacionPaisExistente(UUID id, PaisDTO datos);
 	
